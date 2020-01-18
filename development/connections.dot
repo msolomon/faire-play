@@ -1,0 +1,149 @@
+digraph G {
+  graph [K=4, splines="true", overlap=prism, overlap_shrink=true, maxiter=4000]
+  edge [weight=0.1, len=10, fontsize=11, fontcolor=blue, fontname="helvetica"]
+  node [fontsize=11, fontname="helvetica", style="rounded, filled", fillcolor="none"]
+
+  // cult -> church [dir="both"]
+  // penelope -> french [dir="both"]
+  // penelope -> church [dir="both"]
+
+  peter [label="\N\n(secret police)"]
+  renton [label="\N\n(french cultist logging guilder)"]
+
+  lux [shape=box, fillcolor=green, fontcolor=red, label="\N\n(courtier/psion/French)"]
+  // lux -> psion [headlabel="is"] // individual
+  // lux -> magic [headlabel="performs"] // individual
+  // lux -> church [headlabel="talisman"] // individual
+  // lux -> french [headlabel="is"] // individual
+  lux -> penelope [headlabel="knows truth"]
+  lux -> lordyn [headlabel="knows not sourceress"]
+  lux -> french [headlabel="needs 2 loyalists"]
+  lux -> magic_idol [headlabel="needs"]
+  // lux -> augury [headlabel="can perform"] // individual
+  lux -> battle_plans [headlabel="needs"]
+  lux -> peter [headlabel="vision of murder"]
+  lux -> magic_beans [headlabel="needs"]
+  lux -> torch [headlabel="has"]
+  lux -> renton [headlabel="find killer"]
+  lux -> gold [headlabel="has 50"]
+  lux -> magic_innuendo [headlabel="speaks"]
+  lux -> papers_innuendo [headlabel="speaks"]
+
+  lordyn [shape=box, fillcolor=green, fontcolor=red, label="\N\n(sourceress/illusionist)"]
+  // needs fun abilities
+  // lordyn -> magic [headlabel="imitates"] // individual
+  // lordyn -> illusionist [headlabel="is"] // individual
+  lordyn -> chandler [headlabel="knows about debt to Mantis"]
+  lordyn -> logging_rights [headlabel="needs"]
+  // lordyn -> mask [headlabel="must try on"] // individual
+  lordyn -> penelope [headlabel="forged ransom note"]
+  lordyn -> gold [headlabel="has 100"]
+  lordyn -> magic_idol [headlabel="needs"]
+  lordyn -> magic_innuendo [headlabel="speaks"]
+  lordyn -> papers_innuendo [headlabel="speaks"]
+
+  chandler [shape=box, fillcolor=green, fontcolor=red, label="\N\n(rich/debtor)"]
+  // chandler -> mantis [headlabel="deceiving"]
+  // chandler -> seer [headlabel="must threaten"] // individual
+  chandler -> logging_rights [headlabel="needs"]
+  // chandler -> gamble [headlabel="needs to"] // individual
+  chandler -> horse [headlabel="has black"]
+  chandler -> gold [headlabel="has 250"]
+  chandler -> magic_idol [headlabel="has"]
+  chandler -> french [headlabel="should help"]
+  // chandler -> bet [headlabel="can"] // individual
+  chandler -> magic_innuendo [headlabel="misunderstands"]
+  chandler -> papers_innuendo [headlabel="speaks"]
+
+  yates [shape=box, fillcolor=green, fontcolor=red, label="\N\n(minstrel/crime lord)"]
+  yates -> mantis [headlabel="is"]
+  // yates -> poetry [headlabel="must recite or sing"] // individual
+  yates -> cult [headlabel="sympathizes"]
+  yates -> chandler [headlabel="collect debt"]
+  yates -> bone_idol [headlabel="has"]
+  yates -> magic_idol [headlabel="needs"]
+  // yates -> sharp_eyes [headlabel="has"] // individual
+  yates -> magic_innuendo [headlabel="speaks"]
+  yates -> papers_innuendo [headlabel="speaks"]
+
+  alexander [shape=box, fillcolor=green, fontcolor=red, label="\N\n(soldier/outlaw)"]
+  // alexander -> soldier [headlabel="pretends to be"] // individual
+  // alexander -> outlaw [headlabel="is"] // individual
+  // alexander -> show [headlabel="must watch while drinking"] // individual
+  alexander -> horse [headlabel="needs non-black"]
+  alexander -> bone_idol [headlabel="must destroy"]
+  alexander -> torch [headlabel="needs"]
+  alexander -> weapon [headlabel="has"]
+  alexander -> gold [headlabel="has 50"]
+  // alexander -> mug [headlabel="can perform"] // individual
+  alexander -> peter [headlabel="killed"]
+  alexander -> magic_beans [headlabel="has"]
+  alexander -> magic_innuendo [headlabel="speaks"]
+  alexander -> papers_innuendo [headlabel="misunderstands"]
+  // alexander -> church [headlabel="talisman"] // individual
+
+  mikael [shape=box, fillcolor=green, fontcolor=red, label="\N\n(holy champ/undercover cop)"]
+  // mikael -> competition [headlabel="must outscore someone in"] // individual
+  mikael -> mantis [headlabel="must identify"]
+  // mikael -> french [headlabel="sympathizer"] // individual
+  mikael -> french [headlabel="should help"]
+  mikael -> weapon [headlabel="has"]
+  mikael -> renton [headlabel="find killer"]
+  mikael -> magic_beans [headlabel="needs"]
+  mikael -> magic_innuendo [headlabel="misunderstands"]
+  mikael -> papers_innuendo [headlabel="misunderstands"]
+  mikael -> gold [headlabel="has 50"]
+
+  tonks [shape=box, fillcolor=green, fontcolor=red, label="\N\n(alchemist/thief)"]
+  tonks -> penelope [headlabel="must show safe"]
+  tonks -> gold [headlabel="needs 100"]
+  // tonks -> hat [headlabel="must try on"] // individual
+  // tonks -> pickpocket [headlabel="can"] // individual
+  tonks -> logging_rights [headlabel="has"]
+  tonks -> renton [headlabel="witnessed murder"]
+  tonks -> bone_idol [headlabel="needs"]
+  tonks -> magic_innuendo [headlabel="speaks"]
+  tonks -> papers_innuendo [headlabel="speaks"]
+
+  daniels [shape=box, fillcolor=green, fontcolor=red, label="\N\n(merchant/cult leader)"]
+  daniels -> bone_idol [headlabel="needs"]
+  daniels -> cult [headlabel="leader: must convert 2 members to"]
+  // daniels -> bone_ritual [headlabel="can perform to convert"] // individual
+  daniels -> renton [headlabel="find killer"]
+  daniels -> french [headlabel="should help"]
+  daniels -> magic_innuendo [headlabel="speaks"]
+  daniels -> papers_innuendo [headlabel="misunderstands"]
+
+  christopher [shape=box, fillcolor=green, fontcolor=red, label="\N\n(bodyguard/conjurer)"]
+  christopher -> weapon [headlabel="has"]
+  christopher -> torch [headlabel="has"]
+  christopher -> horse [headlabel="has dun pony"]
+  christopher -> magic_beans [headlabel="needs"]
+  christopher -> mantis [headlabel="get hired"]
+  christopher -> penelope [headlabel="knows safe"]
+  christopher -> logging_rights [headlabel="needs"]
+  christopher -> magic_innuendo [headlabel="speaks"]
+  christopher -> papers_innuendo [headlabel="misunderstands"]
+
+  jewel [shape=box, fillcolor=green, fontcolor=red, label="\N\n(scout/secret police)"]
+  // jewel -> false_identities [headlabel="knows there are many"] // individual
+  jewel -> french [headlabel="must arrest 2"]
+  // jewel -> truth_serum [headlabel="has"] // individual
+  jewel -> horse [headlabel="has brown"]
+  jewel -> peter [headlabel="find killer"]
+  jewel -> mantis [headlabel="knows identity"]
+  jewel -> battle_plans [headlabel="needs"]
+  jewel -> magic_innuendo [headlabel="misunderstands"]
+  jewel -> papers_innuendo [headlabel="speaks"]
+
+  chrysalis [shape=box, fillcolor=green, fontcolor=red, label="\N\n(huntress/forest protectress)"]
+  chrysalis -> renton [headlabel="killed"]
+  // chrysalis -> false_crown [headlabel="can create??"] // individual
+  chrysalis -> horse [headlabel="needs any"]
+  chrysalis -> logging_rights [headlabel="needs"]
+  chrysalis -> magic_idol [headlabel="must destroy"]
+  chrysalis -> weapon [headlabel="needs"]
+  chrysalis -> battle_plans [headlabel="has"]
+  chrysalis -> magic_innuendo [headlabel="speaks"]
+  chrysalis -> papers_innuendo [headlabel="speaks"]
+}
